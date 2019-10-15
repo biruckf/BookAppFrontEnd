@@ -1,0 +1,40 @@
+<div *ngIf="books" class="listofbooks">
+    <table name="bookstable" id="books" class="table table-bordered table-hover table-responsive">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Language</th>
+                <th scope="col">Format</th>
+                <th scope="col">Stock Number</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">List Price</th>
+                <th scope="col">Number of pages</th>
+                <th scope="col">Price</th>
+                <th scope="col">Publication Date</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">Shipping Weight</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td>{{book.id}}</td>
+                <td style="max-width: 10rem">{{book.title}} </td>
+                <td>{{book.author}}</td>
+                <td>{{book.language}}</td>
+                <td>{{book.format}}</td>
+                <td>{{book.stocknumber}}</td>
+                <td>{{book.isbn}}</td>
+                <td>{{book.listPrice}}</td>
+                <td>{{book.numberOfPages}}</td>
+                <td>{{book.price}}</td>
+                <td>{{book.publicationDate}}</td>
+                <td>{{book.publisher}}</td>
+                <td>{{book.shippingWeight}}</td>
+                <td><button type="button" class="btn btn-danger" (click)="deletebook(book.id)">X</button></td>
+                </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,99 @@
+<!-- <div [hidden]="!authenticated()"> -->
+<form [formGroup]="bookForm" (ngSubmit)="addBook(bookForm.value)" class="addbook"> 
+  <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="titleDto">Title</label>
+        <input type="text" class="form-control" formControlName="titleDto" placeholder="Title" />
+        <!-- [ngClass]="{ 'is-invalid':submitted && f.name.errors }"  -->
+        <!-- <div *ngIf="f.titleDto.errors" class="invalid-feedback">
+          <div *ngIf="f.titleDto.errors.pattern">Title not valid</div>
+          <div *ngIf="f.titleDto.errors.required">Title is required</div>
+          <div *ngIf="f.titleDto.errors.titleInUse">Title exists</div>
+        </div>  -->
+         </div>
+      <div class="form-group col-md-6">
+        <label for="authorDto">Author</label>
+        <input type="text" class="form-control" formControlName="authorDto" placeholder="Author">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="publisherDto">Publisher</label>
+      <input type="text" class="form-control" formControlName="publisherDto" placeholder="Publisher">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="descriptionDto">Description</label>
+        <input type="text" class="form-control" formControlName="descriptionDto" placeholder="Description">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="catagoryDto">Catagory</label>
+        <input type="text" class="form-control" formControlName="catagoryDto" placeholder="Catagory">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="publicationDateDto">Publication date</label>
+        <input type="date" class="form-control" formControlName="publicationDateDto"  >
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="formatDto">Format</label>
+        <select formControlName="formatDto" class="form-control">
+          <option selected>Choose...</option>
+          <option>Pdf</option>
+          <option>Printed</option>
+          <option>Kindle</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+          <label for="inStockNumberDto">Stock Number</label>
+          <input type="text" class="form-control" formControlName="inStockNumberDto">
+       </div>
+      <div class="form-group col-md-4">
+        <label for="isbnDto">ISBN</label>
+        <input type="text" class="form-control" formControlName="isbnDto">
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="languageDto">Language</label>
+          <input type="text" class="form-control" formControlName="languageDto">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="listPriceDto">List Price</label>
+            <input type="text" class="form-control" formControlName="listPriceDto">
+         </div>
+        <div class="form-group col-md-4">
+          <label for="numberOfPagesDto">Number of pages</label>
+          <input type="text" class="form-control" formControlName="numberOfPagesDto" >
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="ourPriceDto">Price</label>
+          <input type="text" class="form-control" formControlName="ourPriceDto">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="shippingWeightDto">Weight</label>
+          <input type="text" class="form-control" formControlName="shippingWeightDto" >
+        </div>
+          <div class="form-check">
+              <label for="activeDto">Active</label>
+              <input type="text" class="form-control" formControlName="activeDto" >
+              <!-- <br><br>
+            <input class="form-check-input" type="checkbox" formControlName="activeDto">
+            <label class="form-check-label" for="gridCheck">
+              Active
+            </label> -->
+          </div>
+        </div>
+        <div class="form-group">
+     <button type="submit" class="btn btn-primary" >Add book</button>
+     <a class="btn btn-primary" > Clear all</a>
+    </div>
+    </form>
+<!-- </div>
+<div [hidden]="authenticated()">
+    <p>Login to add books</p>
+  </div> -->

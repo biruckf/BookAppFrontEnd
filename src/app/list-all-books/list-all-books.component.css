@@ -1,0 +1,24 @@
+.listofbooks{
+    height: 100vh; 
+    
+}
+table{
+    height: 85%;
+    background-position-x: center;
+    background-color: rgb(255, 193, 123);
+  }
+td, th {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  /* .listofbooks tbody{
+    background-color: antiquewhite;
+    display:block;
+    overflow:auto;
+    height:85%;
+    width:100%;
+  }
+  .listofbooks thead tr{
+    
+    display:block;
+  } */

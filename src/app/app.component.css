@@ -1,0 +1,19 @@
+.navbar{
+    height:7rem;
+    /* background-color: aqua; */
+}
+.singlepage{
+    margin-left: 10%;
+    margin-right: 10%;
+    height:40em; 
+    background-size:cover;
+    width:auto;
+    background-image:url('/assets/images/bgimg.jpg');
+    background-position:50% 50%;
+}
+.navbar{
+    background-size:cover;
+    width:auto;
+    background-image:url('/assets/images/nav_bar1.jpg');
+    background-position:50% 50%;
+}
