@@ -1,5 +1,6 @@
 <!-- <div [hidden]="!authenticated()"> -->
-<form [formGroup]="bookForm" (ngSubmit)="addBook(bookForm.value)" class="addbook"> 
+<div *ngIf="authority === 'admin'">
+  <form [formGroup]="bookForm" (ngSubmit)="addBook(bookForm.value)" class="addbook"> 
   <div class="form-row">
       <div class="form-group col-md-6">
         <label for="titleDto">Title</label>
@@ -97,3 +98,4 @@
 <div [hidden]="authenticated()">
     <p>Login to add books</p>
   </div> -->
+</div>

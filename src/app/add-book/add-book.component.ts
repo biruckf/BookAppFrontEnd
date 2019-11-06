@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { DuplicateValidator } from '../services/validators/DuplicateValidator';
 import { Router } from '@angular/router';
+import { TokenStorageService } from '../auth/token-storage.service';
 
 @Component({
   selector: 'app-add-book',
@@ -13,7 +14,10 @@ export class AddBookComponent implements OnInit {
   books:any[]=[];
   submitted=false;
   bookForm: FormGroup;
-  constructor(private http:HttpClient,private formBuilder: FormBuilder,
+  private roles: string[];
+  private authority: string;
+
+  constructor(private tokenStorage: TokenStorageService,private http:HttpClient,private formBuilder: FormBuilder,
     private duplicateValidator:DuplicateValidator, private router: Router) { }
 
   ngOnInit() {
@@ -37,6 +41,21 @@ export class AddBookComponent implements OnInit {
       activeDto: ['',]
 
     });
+
+      if (this.tokenStorage.getToken()) {
+        this.roles = this.tokenStorage.getAuthorities();
+        this.roles.every(role => {
+          if (role === 'ROLE_ADMIN') {
+            this.authority = 'admin';
+            return false;
+          } else if (role === 'ROLE_PM') {
+            this.authority = 'pm';
+            return false;
+          }
+          this.authority = 'user';
+          return true;
+        });
+    }
   }
   // authenticated() { return this.app.authenticated; }
 

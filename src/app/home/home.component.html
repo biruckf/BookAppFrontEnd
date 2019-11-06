@@ -1,4 +1,5 @@
-  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+<div *ngIf="info.token; else loggedOut">
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <!-- <img src="..." class="d-block w-100" alt="..."> -->
@@ -9,3 +10,8 @@
       </div>
     </div>
      </div>
+    </div>
+ 
+    <ng-template #loggedOut>
+      Please login.
+    </ng-template>

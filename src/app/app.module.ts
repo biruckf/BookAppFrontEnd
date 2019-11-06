@@ -9,6 +9,13 @@ import { HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { DuplicateValidator } from './services/validators/DuplicateValidator';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { httpInterceptorProviders } from './auth/auth-interceptor';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -16,6 +23,8 @@ import { DuplicateValidator } from './services/validators/DuplicateValidator';
     AddBookComponent,
     ListAllBooksComponent,
     HomeComponent,
+    LoginComponent,
+    RegisterComponent,
    ],
   imports: [
     BrowserModule,
@@ -24,7 +33,7 @@ import { DuplicateValidator } from './services/validators/DuplicateValidator';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [
+  providers: [httpInterceptorProviders,
     DuplicateValidator, 
     ],
   bootstrap: [AppComponent]
